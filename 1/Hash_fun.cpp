@@ -3,8 +3,7 @@
 //
 
 #include "Hash_fun.h"
-#include <Winsock2.h>
-int Hashing::read_int(std::istream &file) {
+uint64_t Hashing::read_int(std::istream &file) {
     char temp;
     uint64_t num = 0, count = 0;
 
@@ -18,7 +17,7 @@ int Hashing::read_int(std::istream &file) {
     }
     return num;
 }
-int Hashing::adler32(std::ifstream& file) {
+uint32_t Hashing::adler32(std::ifstream& file) {
     char temp;
     uint32_t a = 1, b = 0;
 
@@ -34,7 +33,7 @@ int Hashing::adler32(std::ifstream& file) {
 }
 
 
-int Hashing::sum64(std::ifstream& file) {
+uint64_t Hashing::sum64(std::ifstream& file) {
     uint64_t sum = 0;
 
     while (!file.eof())
