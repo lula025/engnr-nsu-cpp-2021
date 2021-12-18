@@ -6,7 +6,7 @@
 #include <Winsock2.h>
 int Hashing::read_int(std::istream &file) {
     char temp;
-    int num = 0, count = 0;
+    uint64_t num = 0, count = 0;
 
     while (!file.eof() && count < sizeof(uint64_t)){
         file.read((char*)&temp, sizeof(char));
@@ -20,7 +20,7 @@ int Hashing::read_int(std::istream &file) {
 }
 int Hashing::adler32(std::ifstream& file) {
     char temp;
-    int a = 1, b = 0;
+    uint32_t a = 1, b = 0;
 
     while (!file.eof()) {
         file.read((char *)&temp, sizeof(char));
@@ -35,7 +35,7 @@ int Hashing::adler32(std::ifstream& file) {
 
 
 int Hashing::sum64(std::ifstream& file) {
-    int sum = 0;
+    uint64_t sum = 0;
 
     while (!file.eof())
         sum += read_int(file);
