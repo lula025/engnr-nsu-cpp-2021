@@ -2,48 +2,40 @@
 //
 
 #include <iostream>
-#include <fstream>
 #include <string>
 #include <cstring>
 #include "Hash_fun.h"
 
-using std::cerr;
-using std::hex;
-using std::cout;
-using std::endl;
-using std::exception;
-using std::string;
-using std::ifstream;
-using std::runtime_error;
+
 
 
 
 
 
 int main(int ac, char* av[]) {
-    string filename, mode;
-    ifstream file;
+    std::string filename, mode;
+    std::ifstream file;
 
 
     //    po::options_description desc("Варианты запуска программы");
-    string help = "Using:\n"
+    std::string help = "Using:\n"
         "\t-h - help\n"
         "\t<filename> -m <mode> - setup by mode (adler32, sum64)\n"
         "\t-m <mode> <filename> - setup by mode\n";
     if (ac == 1|| ac==0)
     {
-        cerr  << "Error: empty list of arguments" << help <<endl;
+        std::cerr  << "Error: empty list of arguments" << help <<std::endl;
         return 1;
     }
     else if(ac==2){
         if(strcmp(av[1], "-h") == 0)
         {
-            cout << help <<endl;
+            std::cout << help <<std::endl;
             return 0;
         }
         else
         {
-            cerr  << "Error: wrong command" << help << endl;
+            std::cerr  << "Error: wrong command" << help <<std:: endl;
             return 1;
         }
     }
@@ -57,7 +49,7 @@ int main(int ac, char* av[]) {
             }
             else
                 {
-                cerr << "Error: undefined way to calculate" << help <<endl;
+                std::cerr << "Error: undefined way to calculate" << help <<std::endl;
                 return 1;
             }
         }
@@ -70,14 +62,14 @@ int main(int ac, char* av[]) {
             }
             else
                 {
-                cerr  << "Error: undefined way to calculate" << help <<endl;
+                std::cerr  << "Error: undefined way to calculate" << help <<std::endl;
                 return 1;
             }
         }
     }
     else
         {
-        cerr  << "Error: undefined commands" << help << endl;
+        std::cerr  << "Error: undefined commands" << help << std::endl;
         return 1;
     }
 
@@ -85,35 +77,35 @@ int main(int ac, char* av[]) {
 
     if (!(file.is_open()))
     {
-        cerr << "File not found" << help <<endl;
+        std::cerr << "File not found" << help <<std::endl;
         return 1;
     }
-    else if(file.peek() == EOF)
-    {
-        if(mode == "adler32")
-        {
-            cout << 1 << endl;
-        }
-        else
-            {
-            cout << 0 << endl;
-        }
-        return 0;
-    }
+//   else if(file.peek() == EOF)
+//   {
+//        if(mode == "adler32")
+//        {
+//            std::cout << 1 << std::endl;
+//        }
+//        else
+//            {
+//            std::cout << 0 <<std::endl;
+//        }
+//        return 0;
+//    }
 
     try {
         if (mode == "adler32")
         {
-            cout << hex << Hash_fun::adler32(file) <<endl;
+            std::cout << hex << Hash_fun::adler32(file) <<std::endl;
         }
         else
             {
-            cout << hex << Hash_fun::sum64(file) << endl;
+            std::cout << hex << Hash_fun::sum64(file) << std::endl;
         }
     }
     catch (exception &e)
     {
-        cerr << e.what() <<endl;
+        std::cerr << e.what() <<std::endl;
         return 1;
     }
     return 0;
