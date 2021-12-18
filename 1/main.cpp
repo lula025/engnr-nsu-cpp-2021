@@ -31,7 +31,7 @@ int main(int ac, char** av) {
         "\t-h - вывести help\n"
         "\t<filename> -m <mode> - запуск по имени файла и режиму (adler32, sum64)\n"
         "\t-m <mode> <filename>\n";
-    if (ac == 1)
+    if (ac == 1|| ac==0)
     {
         cerr  << "Ошибка: нет аргументов" << help <<endl;
         return 1;
@@ -43,10 +43,10 @@ int main(int ac, char** av) {
             return 0;
         }
         else
-            {
+        {
             cerr  << "Ошибка: неизвестная команда" << help << endl;
+            return 1;
         }
-        return 1;
     }
     else if (ac == 4) {
         if (strcmp(av[1], "-m") == 0)
@@ -62,7 +62,7 @@ int main(int ac, char** av) {
                 return 1;
             }
         }
-        else
+        else if (strcmp(av[2], "-m") == 0)
             {
             if ((strcmp(av[3], "adler32") == 0) || (strcmp(av[3], "sum64") == 0))
             {

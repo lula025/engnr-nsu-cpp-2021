@@ -6,7 +6,7 @@
 #include <cstring>
 #include <iostream>
 uint64_t Hash_fun::read_int(std::istream &file) {
-    char temp;
+    char temp=0;
     uint64_t num = 0, count = 0;
 
     while (!file.eof() && count < sizeof(uint64_t)){
