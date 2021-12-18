@@ -11,8 +11,8 @@ uint64_t Hash_fun::read_int(std::istream &file) {
 
     while (!file.eof() && count < sizeof(uint64_t)){
         file.read((char*)&temp, sizeof(char));
-        std::streamsize bytes = file.gcount();
-        if (!bytes) break;
+        std::streamsize sz = file.gcount();
+        if (!sz) break;
 
         num <<= 8;
         num |= temp;
@@ -27,6 +27,7 @@ uint32_t Hash_fun::adler32(std::ifstream& file) {
     while (!file.eof()) {
         file.read((char *)&temp, sizeof(char));
         std::streamsize count = file.gcount();
+        if (!count) break;
 
         a = (a + temp) % mod_adler;
         b = (b + a) % mod_adler;

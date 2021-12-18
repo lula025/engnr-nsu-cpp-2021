@@ -1,4 +1,4 @@
-// hesh_file.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+// hash_file.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
@@ -6,6 +6,7 @@
 #include <exception>
 #include <string>
 #include <cstring>
+
 #include "Hash_fun.h"
 
 using std::cerr;
@@ -60,12 +61,12 @@ int main(int ac, char** av) {
             throw runtime_error("File not found!");
 
         if (mode == "adler32") {
-            int hash = Hashing::adler32(file);
+            int hash = Hash_fun::adler32(file);
 
             cout << "Hash: 0x" << std::hex << hash << "\n";
         }
         else {
-            int hash = Hashing::sum64(file);
+            int hash = Hash_fun::sum64(file);
 
             cout << "Hash: 0x" << std::hex << hash << "\n";
         }
