@@ -3,6 +3,8 @@
 //
 
 #include "Hash_fun.h"
+#include <cstring>
+#include <iostream>
 uint64_t Hashing::read_int(std::istream &file) {
     char temp;
     uint64_t num = 0, count = 0;
@@ -12,7 +14,8 @@ uint64_t Hashing::read_int(std::istream &file) {
         std::streamsize bytes = file.gcount();
         if (!bytes) break;
 
-        num <<= 8; num |= temp;
+        num <<= 8;
+        num |= temp;
         count++;
     }
     return num;

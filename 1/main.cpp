@@ -6,7 +6,6 @@
 #include <exception>
 #include <string>
 #include <cstring>
-#include <map>
 #include "Hash_fun.h"
 
 using std::cerr;
