@@ -7,7 +7,7 @@
 #include <fstream>
 using namespace std;
 const int mod_adler= 65521;
-class Hashing{
+class Hash_fun{
 public:
     static int adler32(ifstream& file);
     static int sum64(ifstream& file);

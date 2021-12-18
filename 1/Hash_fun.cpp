@@ -5,7 +5,7 @@
 #include "Hash_fun.h"
 #include <cstring>
 #include <iostream>
-uint64_t Hashing::read_int(std::istream &file) {
+uint64_t Hash_fun::read_int(std::istream &file) {
     char temp;
     uint64_t num = 0, count = 0;
 
@@ -20,7 +20,7 @@ uint64_t Hashing::read_int(std::istream &file) {
     }
     return num;
 }
-uint32_t Hashing::adler32(std::ifstream& file) {
+uint32_t Hash_fun::adler32(std::ifstream& file) {
     char temp;
     uint32_t a = 1, b = 0;
 
@@ -36,7 +36,7 @@ uint32_t Hashing::adler32(std::ifstream& file) {
 }
 
 
-uint64_t Hashing::sum64(std::ifstream& file) {
+uint64_t Hash_fun::sum64(std::ifstream& file) {
     uint64_t sum = 0;
 
     while (!file.eof())
