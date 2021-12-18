@@ -21,14 +21,11 @@ uint64_t Hash_fun::read_int(std::istream &file) {
     return num;
 }
 uint32_t Hash_fun::adler32(std::ifstream& file) {
-    char temp;
+    unsigned char temp;
     uint32_t a = 1, b = 0;
 
-    while (!file.eof()) {
-        file.read((char *)&temp, sizeof(char));
-        std::streamsize count = file.gcount();
-        if (!count) break;
-
+    while (file.read((char *)(&temp), sizeof(unsigned char)))
+    {
         a = (a + temp) % mod_adler;
         b = (b + a) % mod_adler;
     }
