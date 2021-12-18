@@ -12,7 +12,7 @@ public:
     static uint32_t adler32(ifstream& file);
     static uint64_t sum64(ifstream& file);
 private:
-    static uint64_t read_int(std::istream &file);
+    static uint64_t read_int(istream &file);
 };
 
 
