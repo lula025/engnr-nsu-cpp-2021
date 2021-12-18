@@ -5,7 +5,6 @@
 #include <fstream>
 #include <string>
 #include <cstring>
-
 #include "Hash_fun.h"
 
 using std::cerr;
@@ -21,19 +20,19 @@ using std::runtime_error;
 
 
 
-int main(int ac, char** av) {
+int main(int ac, char* av[]) {
     string filename, mode;
     ifstream file;
 
 
     //    po::options_description desc("Варианты запуска программы");
-    string help = "Варианты запуска программы:\n"
-        "\t-h - вывести help\n"
-        "\t<filename> -m <mode> - запуск по имени файла и режиму (adler32, sum64)\n"
-        "\t-m <mode> <filename>\n";
+    string help = "Using:\n"
+        "\t-h - help\n"
+        "\t<filename> -m <mode> - setup by mode (adler32, sum64)\n"
+        "\t-m <mode> <filename> - setup by mode\n";
     if (ac == 1|| ac==0)
     {
-        cerr  << "Ошибка: нет аргументов" << help <<endl;
+        cerr  << "Error: empty list of arguments" << help <<endl;
         return 1;
     }
     else if(ac==2){
@@ -44,7 +43,7 @@ int main(int ac, char** av) {
         }
         else
         {
-            cerr  << "Ошибка: неизвестная команда" << help << endl;
+            cerr  << "Error: wrong command" << help << endl;
             return 1;
         }
     }
@@ -58,7 +57,7 @@ int main(int ac, char** av) {
             }
             else
                 {
-                cerr << "Ошибка: неизвестный способ расчета" << help <<endl;
+                cerr << "Error: undefined way to calculate" << help <<endl;
                 return 1;
             }
         }
@@ -71,22 +70,22 @@ int main(int ac, char** av) {
             }
             else
                 {
-                cerr  << "Ошибка: неизвестный способ расчета" << help <<endl;
+                cerr  << "Error: undefined way to calculate" << help <<endl;
                 return 1;
             }
         }
     }
     else
         {
-        cerr  << "Ошибка: неизвестные комманды" << help << endl;
+        cerr  << "Error: undefined commands" << help << endl;
         return 1;
     }
 
-    file.open(filename, std::ios::binary);
+    file.open(filename, std::ios::in|std::ios::binary);
 
     if (!(file.is_open()))
     {
-        cerr << "Файл не найден" << help <<endl;
+        cerr << "File not found" << help <<endl;
         return 1;
     }
     else if(file.peek() == EOF)

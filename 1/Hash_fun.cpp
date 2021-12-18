@@ -4,7 +4,7 @@
 
 #include "Hash_fun.h"
 #include <iostream>
-uint32_t Hash_fun::adler32(std::ifstream& file) {
+uint32_t Hash_fun::adler32(std::istream& file) {
     unsigned char temp;
     uint32_t a = 1, b = 0;
 
@@ -18,7 +18,7 @@ uint32_t Hash_fun::adler32(std::ifstream& file) {
 }
 
 
-uint64_t Hash_fun::sum64(std::ifstream &file) {
+uint64_t Hash_fun::sum64(std::istream &file) {
     uint64_t result = 0;
 
     while (!file.eof()) {
