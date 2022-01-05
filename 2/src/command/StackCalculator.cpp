@@ -15,33 +15,40 @@ Command *StackCalc::read_command(std::string &command_line)
     x >> command;
     Command *operation;
     //уроды могли бы свитч для стррок в схх сделать
-    if (command.empty()) return nullptr;
-    else if (command == "POP") operation = new Pop(command);
-    else if (command == "PUSH")
-    {
+    if (command.empty()) {
+        return nullptr;
+    } else if (command == "POP") {
+        operation = new Pop(command);
+    } else if (command == "PUSH") {
         x >> command;
         operation = new Push(command);
-    }
-    else if (command == "PEEK")
-    {
+    } else if (command == "PEEK") {
         x >> command;
         operation = new Peek(command);
-    }
-    else if (command == "ABS") operation = new Abs(command);
-    else if (command == "PLUS") operation = new Plus(command);
-    else if (command == "MINUS") operation = new Minus(command);
-    else if (command == "MULT") operation = new Multiply(command);
-    else if (command == "DIV") operation = new Division(command);
-    else if (command == "PRINT") operation = new Print(command);
-    else if (command == "READ") operation = new Read(command);
-    else
-        {
-        if (command != "#") throw UnknownCommand("Unknown command: " + command);
-        else operation = new Comment(command);
-
+    } else if (command == "ABS") {
+        operation = new Abs(command);
+    } else if (command == "PLUS") {
+        operation = new Plus(command);
+    } else if (command == "MINUS") {
+        operation = new Minus(command);
+    } else if (command == "MUL") {
+        operation = new Multiply(command);
+    } else if (command == "DIV") {
+        operation = new Division(command);
+    } else if (command == "PRINT") {
+        operation = new Print(command);
+    } else if (command == "READ") {
+        operation = new Read(command);
+    } else {
+        if (command != "#") {
+            throw UnknownCommand("Unknown command: " + command);
+        } else {
+            operation = new Comment(command);
+        }
     }
     return operation;
 }
+
 
 StackCalc OneCommandRead()
 {
