@@ -31,7 +31,7 @@ Command *StackCalc::read_command(std::string &command_line)
         operation = new Plus(command);
     } else if (command == "MINUS") {
         operation = new Minus(command);
-    } else if (command == "MUL") {
+    } else if (command == "MULT") {
         operation = new Multiply(command);
     } else if (command == "DIV") {
         operation = new Division(command);
