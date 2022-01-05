@@ -4,3 +4,7 @@
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
+subdirs("src/main")
+subdirs("src/command")
+subdirs("SafeInt")
+subdirs("C:/Users/bulga/engnr-nsu-cpp-2021/mytests/mytest.cpp")

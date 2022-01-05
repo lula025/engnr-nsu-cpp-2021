@@ -7,10 +7,9 @@ add_subdirectory(src/main)
 add_subdirectory(src/command)
 
 enable_testing()
-add_subdirectory(../../SafeInt)
-include_directories(../../SafeInt)
-add_subdirectory(libs/googletest ../../mytests/mytest.cpp)
-add_executable(2 ../command/Commands.h ../command/Commands.cpp main.cpp ../command/StackCalculator.h ../command/StackCalculator.cpp)
+add_subdirectory(SafeInt)
+include_directories(SafeInt)
+add_subdirectory(googletest ../../mytests/mytest.cpp)
 
 # For Windows: Prevent overriding the parent project's compiler/linker settings
 
