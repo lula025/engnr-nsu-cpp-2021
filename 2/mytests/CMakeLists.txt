@@ -1,14 +1,16 @@
-add_executable(calculator_tests
+add_executable(main_tests
         mytests/mytest.cpp
         )
 
 
-
-target_link_libraries(calculator_tests
-
+target_include_directories(main_tests
+        PRIVATE "../src/command"
+        )
+target_link_libraries(main_tests
+        command
         gtest
         gmock_main
         )
 
 enable_testing()
-add_test(NAME google_test COMMAND calculator_tests)
+add_test(NAME google_test COMMAND main_tests)

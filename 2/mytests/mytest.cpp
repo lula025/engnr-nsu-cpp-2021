@@ -4,7 +4,7 @@
 
 #include <fstream>
 #include "../src/command/StackCalculator.h"
-#include <gtest/gtest.h>
+#include "gtest/gtest.h"
 
 TEST(CALCULATOR1, EXAMPLE_TEST) {
 std::stringstream data("# myVar = -14 / 5\n"
