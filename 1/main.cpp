@@ -6,12 +6,6 @@
 #include <cstring>
 #include "Hash_fun.h"
 
-
-
-
-
-
-
 int main(int ac, char* av[]) {
     std::string filename, mode;
     std::ifstream file;
