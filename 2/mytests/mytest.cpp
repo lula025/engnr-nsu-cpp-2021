@@ -3,7 +3,7 @@
 //
 
 #include <fstream>
-#include "../StackCalculator.h"
+#include "../src/command/StackCalculator.h"
 #include <gtest/gtest.h>
 
 TEST(CALCULATOR1, EXAMPLE_TEST) {

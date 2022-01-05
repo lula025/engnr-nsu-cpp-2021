@@ -1,4 +1,4 @@
-#include "StackCalculator.h"
+#include "../command/StackCalculator.h"
 #include <iostream>
 #include <fstream>
 #include <string>
