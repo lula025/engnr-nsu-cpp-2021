@@ -30,11 +30,9 @@ TEST(CALCULATOR1, EASY_TEST) {
 std::stringstream data("PUSH 1\n"
                        "PUSH 2\n"
                        "PUSH 3\n"
-                       "PUSH 4\n"
                        "PLUS\n"
                        "PLUS\n"
-                       "PLUS\n"
-                       "PUSH 10\n"
+                       "PUSH 6\n"
                        "MINUS\n"
                        "PRINT");
 int64_t result = 0;
