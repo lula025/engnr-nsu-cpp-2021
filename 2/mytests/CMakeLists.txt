@@ -1,5 +1,5 @@
 add_executable(main_tests
-        mytests/mytest.cpp
+        mytest.cpp
         )
 
 
