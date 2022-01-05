@@ -18,7 +18,7 @@ std::stringstream data("# myVar = -14 / 5\n"
                        "PUSH myVar\n"
                        "MINUS\n"
                        "PUSH 20\n"
-                       "MUL\n"
+                       "MULT\n"
                        "PRINT");
 int64_t result = 220;
 StackCalc stack;
@@ -74,7 +74,7 @@ std::stringstream data("PUSH 4\n"
                        "\n"
                        "PUSH d\n"
                        "\n"
-                       "MUL\n"
+                       "MULT\n"
                        "\n"
                        "PUSH e\n"
                        "\n"
