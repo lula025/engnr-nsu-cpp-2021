@@ -40,14 +40,14 @@ TEST(CALCULATOR1, EASY_TEST) {
     stack = ReadFromStream(data);
     EXPECT_EQ(stack.FindResult()["result"], result);
 }
-//TEST(CALCULATOR1, OVERFLOW_BY_DIV) {
-//    std::stringstream data("PUSH -9223372036854775808\n"
-//                           "PUSH -1\n"
-//                           "DIV\n"
-//                           "PRINT"
-//    );
-//    EXPECT_THROW(ReadFromStream(data), OverflowException);
-//}
+TEST(CALCULATOR1, OVERFLOW_BY_DIV) {
+    std::stringstream data("PUSH -9223372036854775808\n"
+                          "PUSH -1\n"
+                           "DIV\n"
+                           "PRINT"
+    );
+    EXPECT_THROW(ReadFromStream(data), OverflowException);
+}
 
 TEST(CALCULATOR1, HARD_TEST) {
 std::stringstream data("PUSH 4\n"
