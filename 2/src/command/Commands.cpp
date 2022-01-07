@@ -26,11 +26,7 @@ void Push::command(ContextExecution &context_execution)
     {
         int64_t result;
         auto[ptr, ec]{std::from_chars(params.data(), params.data() + params.size(), result)};
-        if(ec ==  std::errc::invalid_argument)
-        {
-            throw WrongArgument();
-        }
-        else if (ec == std::errc::result_out_of_range)
+        if (ec == std::errc::result_out_of_range)
         {
             throw OverflowException();
         }
