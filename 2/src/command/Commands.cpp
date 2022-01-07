@@ -129,8 +129,9 @@ void Division::command(ContextExecution &context_execution)
         if (val1 != 0)
         {
             context_execution.stack.pop();
-            SafeInt<int64_t, CustomException> result = val1 / val2;
-            context_execution.stack.push(result);
+            int64_t res;
+            SafeDivide(val2, val1, res);
+            context_execution.stack.push(res);
         }
         else throw DivisionByZero();
 
