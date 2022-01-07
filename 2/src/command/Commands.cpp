@@ -120,18 +120,17 @@ void Division::command(ContextExecution &context_execution)
 {
     if (context_execution.stack.size() >= 2)
     {
-        //SafeInt<int64_t, CustomException> val1 = context_execution.stack.top();
+        SafeInt<int64_t, CustomException> val1 = context_execution.stack.top();
 
-        int64_t val1 = context_execution.stack.top();
+//        int64_t val1 = context_execution.stack.top();
         context_execution.stack.pop();
-        //SafeInt<int64_t, CustomException> val2 = context_execution.stack.top();
-        int64_t val2 = context_execution.stack.top();
+        SafeInt<int64_t, CustomException> val2 = context_execution.stack.top();
+//        int64_t val2 = context_execution.stack.top();
         if (val1 != 0)
         {
             context_execution.stack.pop();
-            int64_t res;
-            SafeDivide(val2, val1, res);
-            context_execution.stack.push(res);
+            SafeInt<int64_t, CustomException> result = val1 / val2;
+            context_execution.stack.push(result);
         }
         else throw DivisionByZero();
 
