@@ -26,15 +26,16 @@ void Push::command(ContextExecution &context_execution)
     {
         int64_t result;
         auto[ptr, ec]{std::from_chars(params.data(), params.data() + params.size(), result)};
-        if (ec == std::errc::result_out_of_range)
-        {
-            throw OverflowException();
-        }
-        else if(ec ==  std::errc::invalid_argument)
+        if(ec ==  std::errc::invalid_argument)
         {
             throw WrongArgument();
         }
+        else if (ec == std::errc::result_out_of_range)
+        {
+            throw OverflowException();
+        }
         context_execution.stack.push(result);
+
     }
     else
         {
@@ -123,8 +124,11 @@ void Division::command(ContextExecution &context_execution)
 {
     if (context_execution.stack.size() >= 2)
     {
+        //SafeInt<int64_t, CustomException> val1 = context_execution.stack.top();
+
         int64_t val1 = context_execution.stack.top();
         context_execution.stack.pop();
+        //SafeInt<int64_t, CustomException> val2 = context_execution.stack.top();
         int64_t val2 = context_execution.stack.top();
         if (val1 != 0)
         {
