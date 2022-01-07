@@ -27,18 +27,26 @@ EXPECT_EQ(stack.FindResult()["result"], result);
 }
 
 TEST(CALCULATOR1, EASY_TEST) {
-std::stringstream data("PUSH 1\n"
-                       "PUSH 2\n"
-                       "PUSH 3\n"
-                       "PLUS\n"
-                       "PLUS\n"
-                       "PUSH 6\n"
-                       "MINUS\n"
-                       "PRINT");
-int64_t result = 0;
-StackCalc stack;
-stack = ReadFromStream(data);
-EXPECT_EQ(stack.FindResult()["result"], result);
+    std::stringstream data("PUSH 1\n"
+                           "PUSH 2\n"
+                           "PUSH 3\n"
+                           "PLUS\n"
+                           "PLUS\n"
+                           "PUSH 6\n"
+                           "MINUS\n"
+                           "PRINT");
+    int64_t result = 0;
+    StackCalc stack;
+    stack = ReadFromStream(data);
+    EXPECT_EQ(stack.FindResult()["result"], result);
+}
+TEST(CALCULATOR1, OVERFLOW_BY_DIV) {
+    std::stringstream data("PUSH -9223372036854775808\n"
+                           "PUSH -1\n"
+                           "DIV\n"
+                           "PRINT"
+    );
+    EXPECT_THROW(ReadFromStream(data), OverflowException);
 }
 
 TEST(CALCULATOR1, HARD_TEST) {

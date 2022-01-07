@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="SafeInt"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\SafeInt\;CMake Files\src\;CMake Files\src\main\;CMake Files\src\command\;CMake Files\googletest\;CMake Files\googletest\googlemock\;CMake Files\googletest\googlemock\cmake\;CMake Files\googletest\googletest\;CMake Files\googletest\googletest\cmake\;CMake Files\mytests\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/bulga/engnr-nsu-cpp-2021/2/cmake-build-debug/SafeInt"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/bulga/engnr-nsu-cpp-2021/2/cmake-build-debug/SafeInt/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/bulga/engnr-nsu-cpp-2021/2/cmake-build-debug/SafeInt/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/bulga/engnr-nsu-cpp-2021/2/cmake-build-debug/SafeInt/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/bulga/engnr-nsu-cpp-2021/2/cmake-build-debug/SafeInt/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/bulga/engnr-nsu-cpp-2021/2/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/bulga/engnr-nsu-cpp-2021/2/SafeInt/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\SafeInt\"/>
+		</Unit>
+		<Unit filename="C:/Users/bulga/engnr-nsu-cpp-2021/2/src/main/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\main\"/>
+		</Unit>
+		<Unit filename="C:/Users/bulga/engnr-nsu-cpp-2021/2/src/command/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\command\"/>
+		</Unit>
+		<Unit filename="C:/Users/bulga/engnr-nsu-cpp-2021/2/googletest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\googletest\"/>
+		</Unit>
+		<Unit filename="C:/Users/bulga/engnr-nsu-cpp-2021/2/googletest/googlemock/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\googletest\googlemock\"/>
+		</Unit>
+		<Unit filename="C:/Users/bulga/engnr-nsu-cpp-2021/2/googletest/googlemock/cmake/gmock.pc.in">
+			<Option virtualFolder="CMake Files\googletest\googlemock\cmake\"/>
+		</Unit>
+		<Unit filename="C:/Users/bulga/engnr-nsu-cpp-2021/2/googletest/googlemock/cmake/gmock_main.pc.in">
+			<Option virtualFolder="CMake Files\googletest\googlemock\cmake\"/>
+		</Unit>
+		<Unit filename="C:/Users/bulga/engnr-nsu-cpp-2021/2/googletest/googletest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\googletest\googletest\"/>
+		</Unit>
+		<Unit filename="C:/Users/bulga/engnr-nsu-cpp-2021/2/googletest/googletest/cmake/Config.cmake.in">
+			<Option virtualFolder="CMake Files\googletest\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="C:/Users/bulga/engnr-nsu-cpp-2021/2/googletest/googletest/cmake/gtest.pc.in">
+			<Option virtualFolder="CMake Files\googletest\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="C:/Users/bulga/engnr-nsu-cpp-2021/2/googletest/googletest/cmake/gtest_main.pc.in">
+			<Option virtualFolder="CMake Files\googletest\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="C:/Users/bulga/engnr-nsu-cpp-2021/2/googletest/googletest/cmake/internal_utils.cmake">
+			<Option virtualFolder="CMake Files\googletest\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="C:/Users/bulga/engnr-nsu-cpp-2021/2/mytests/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\mytests\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

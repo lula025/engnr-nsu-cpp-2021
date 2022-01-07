@@ -26,7 +26,14 @@ void Push::command(ContextExecution &context_execution)
     {
         int64_t result;
         auto[ptr, ec]{std::from_chars(params.data(), params.data() + params.size(), result)};
-        if (ec == std::errc::result_out_of_range) throw OverflowException();
+        if (ec == std::errc::result_out_of_range)
+        {
+            throw OverflowException();
+        }
+        else if(ec ==  std::errc::invalid_argument)
+        {
+            throw WrongArgument();
+        }
         context_execution.stack.push(result);
     }
     else
@@ -122,9 +129,8 @@ void Division::command(ContextExecution &context_execution)
         if (val1 != 0)
         {
             context_execution.stack.pop();
-            int64_t res;
-            SafeDivide(val2, val1, res);
-            context_execution.stack.push(res);
+            SafeInt<int64_t, CustomException> result = val1 / val2;
+            context_execution.stack.push(result);
         }
         else throw DivisionByZero();
 
