@@ -126,13 +126,10 @@ void Division::command(ContextExecution &context_execution)
         context_execution.stack.pop();
         SafeInt<int64_t, CustomException> val2 = context_execution.stack.top();
 //        int64_t val2 = context_execution.stack.top();
-        if (val1 != 0)
-        {
-            context_execution.stack.pop();
-            SafeInt<int64_t, CustomException> result = val1 / val2;
-            context_execution.stack.push(result);
-        }
-        else throw DivisionByZero();
+        context_execution.stack.pop();
+        SafeInt<int64_t, CustomException> result = val1 / val2;
+        context_execution.stack.push(result);
+
 
     }
     else throw NEElement();
@@ -175,4 +172,7 @@ void CustomException::SafeIntOnOverflow()
     throw OverflowException();
 }
 
-
+void CustomException::SafeIntOnDivZero()
+{
+    throw DivisionByZero();
+}

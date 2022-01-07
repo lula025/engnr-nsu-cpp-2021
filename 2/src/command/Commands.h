@@ -118,6 +118,7 @@ class DivisionByZero : public StackException
 class CustomException : public SafeIntException{
 public:
     static void SafeIntOnOverflow();
+    static void SafeIntOnDivZero();
 };
 
 // context executing
