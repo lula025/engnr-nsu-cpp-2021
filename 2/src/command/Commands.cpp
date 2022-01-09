@@ -30,6 +30,10 @@ void Push::command(ContextExecution &context_execution)
         {
             throw OverflowException();
         }
+        else if(ec == std::errc::invalid_argument)
+        {
+            throw WrongArgument();
+        }
         context_execution.stack.push(result);
 
     }
@@ -111,7 +115,6 @@ void Multiply::command(ContextExecution &context_execution)
         context_execution.stack.push(result);
     }
     else throw NEElement();
-
 }
 
 Division::Division(std::string &args) : Command(args) {}
@@ -127,13 +130,14 @@ void Division::command(ContextExecution &context_execution)
         SafeInt<int64_t, CustomException> val2 = context_execution.stack.top();
 //        int64_t val2 = context_execution.stack.top();
         context_execution.stack.pop();
-        SafeInt<int64_t, CustomException> result = val1 / val2;
+        SafeInt<int64_t, CustomException> result = val2 / val1;
         context_execution.stack.push(result);
 
 
     }
     else throw NEElement();
 }
+
 
 Print::Print(std::string &args) : Command(args) {}
 
