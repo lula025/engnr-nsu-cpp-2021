@@ -1,2 +1,0 @@
-C:\MinGW\bin\ar.exe qc libcommand.a  CMakeFiles/command.dir/StackCalculator.cpp.obj CMakeFiles/command.dir/Commands.cpp.obj
-C:\MinGW\bin\ranlib.exe libcommand.a
