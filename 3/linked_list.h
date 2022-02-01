@@ -64,6 +64,10 @@ class LinkedList
                             --(*this);
                             return old;
                         }
+                        const_iterator *operator->()
+                        {
+                            return &(current->data);
+                        }
                         bool operator==(const const_iterator &rhs) const
                         {
                             return current == rhs.current;
@@ -115,6 +119,10 @@ class LinkedList
                             --(*this);
                             return old;
                         }
+                        iterator *operator->()
+                        {
+                            return &(this->current->data);
+                        }
                     protected:
                         iterator(Node *p) : const_iterator{p} {}
                         friend class LinkedList<T>;
@@ -148,6 +156,10 @@ class LinkedList
                             const_reverse_iterator old = *this;
                             --(*this);
                             return old;
+                        }
+                        const_reverse_iterator *operator->()
+                        {
+                            return &(current->data);
                         }
                         bool operator==(const const_reverse_iterator &rhs) const
                         {
@@ -200,6 +212,10 @@ class LinkedList
                             reverse_iterator old = *this;
                             --(*this);
                             return old;
+                        }
+                        reverse_iterator *operator->()
+                        {
+                            return &(this->current->data);
                         }
                     protected:
                         reverse_iterator(Node *p) : const_reverse_iterator{p} {}

@@ -10,6 +10,12 @@ LinkedList<int> li1(li);
 
 ASSERT_EQ(li == li1, true);
 }
+TEST(LL__Test, Nikita_Test){
+    LinkedList<int> list = {1, 2, 3};
+    const auto iter = list.rbegin();
+
+    ASSERT_EQ(*iter==3, true);
+}
 
 TEST(LL__Test, Copy_Assigment_Test) {
 LinkedList<int> li = {1, 2, 3, 4, 5};
@@ -209,7 +215,6 @@ TEST(LL__Test, Reverse_Test) {
 LinkedList<int> list = {1, 2, 3, 4, 5};
 LinkedList<int> list1 = {5, 4, 3, 2, 1};
 list.reverse();
-//    list.print();
 ASSERT_EQ(list1 == list, true);
 }
 
