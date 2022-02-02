@@ -31,10 +31,10 @@ TEST(LL__Test, TEst_wn) {
 
     LinkedList<test_struct> li ;
     test_struct cringe;
-    cringe.data=1;
+    cringe.data=0;
     auto it =li.begin();
     li.insert(it,cringe);
-    ASSERT_EQ(  it->data, 1);
+    ASSERT_EQ(  it->data, 0);
 }
 TEST(LL__Test, Move_Test) {
 LinkedList<int> list = {1, 2, 3, 4, 5};
