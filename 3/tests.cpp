@@ -34,7 +34,7 @@ TEST(LL__Test, TEst_wn) {
     cringe.data=1;
     auto it =li.begin();
     li.insert(it,cringe);
-    ASSERT_EQ(  it->data== 1, true);
+    ASSERT_EQ(  it->data, 1);
 }
 TEST(LL__Test, Move_Test) {
 LinkedList<int> list = {1, 2, 3, 4, 5};
@@ -75,7 +75,7 @@ TEST(LL__Test, Constructor_test) {
     LinkedList<int> l(t, 5);
     auto it = l.begin();
     for (int i = 1; i < 6; i++) {
-        ASSERT_EQ(i, *it);
+        ASSERT_EQ(5, *it);
         ++it;
     }
 }
