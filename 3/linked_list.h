@@ -64,7 +64,7 @@ class LinkedList
                             --(*this);
                             return old;
                         }
-                        const_iterator *operator->()
+                        const T *operator->()
                         {
                             return &(current->data);
                         }
@@ -119,7 +119,7 @@ class LinkedList
                             --(*this);
                             return old;
                         }
-                        iterator *operator->()
+                        T *operator->()
                         {
                             return &(this->current->data);
                         }
@@ -157,7 +157,7 @@ class LinkedList
                             --(*this);
                             return old;
                         }
-                        const_reverse_iterator *operator->()
+                        const T *operator->()
                         {
                             return &(current->data);
                         }
@@ -213,7 +213,7 @@ class LinkedList
                             --(*this);
                             return old;
                         }
-                        reverse_iterator *operator->()
+                        T* operator->()
                         {
                             return &(this->current->data);
                         }
@@ -240,7 +240,6 @@ class LinkedList
             LinkedList(size_type count, const T &value)
             {
                 init();
-                _size = count;
                 while (count--)
                 {
                     push_back(value);

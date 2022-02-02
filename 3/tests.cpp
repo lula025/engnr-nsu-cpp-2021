@@ -24,7 +24,18 @@ li1 = li;
 
 ASSERT_EQ(li == li1, true);
 }
+struct test_struct{
+    int data;
+};
+TEST(LL__Test, TEst_wn) {
 
+    LinkedList<test_struct> li ;
+    test_struct cringe;
+    cringe.data=1;
+    auto it =li.begin();
+    li.insert(it,cringe);
+    ASSERT_EQ(  it->data== 1, true);
+}
 TEST(LL__Test, Move_Test) {
 LinkedList<int> list = {1, 2, 3, 4, 5};
 LinkedList<int> list1(std::move(list));
@@ -58,6 +69,15 @@ for (int i = 1; i < 6; i++) {
 ASSERT_EQ(i, *it);
 ++it;
 }
+}
+TEST(LL__Test, Constructor_test) {
+    size_t t = 5;
+    LinkedList<int> l(t, 5);
+    auto it = l.begin();
+    for (int i = 1; i < 6; i++) {
+        ASSERT_EQ(i, *it);
+        ++it;
+    }
 }
 
 TEST(LL__Test, Insert_Test_simple) {
